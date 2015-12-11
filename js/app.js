@@ -87,7 +87,8 @@ $(function(){
     var winW = $(window).width();
     var i=0;
     $pmShowWrap.width(len*w).css({'transform':'translate3d('+(-(len*w-winW)/2)+'px,0,0)'});
-    $pmShowWrap.on('swipeLeft',function(){
+    $pmShowWrap.on('swipeLeft',function(e){
+    	e.preventDefault();
         i++;
         if(i>=len-2){
             i=0;
@@ -98,7 +99,8 @@ $(function(){
         console.log(i);
 
     });
-    $pmShowWrap.on('swipeRight',function(){
+    $pmShowWrap.on('swipeRight',function(e){
+    	e.preventDefault();
         i--;
         /*if(i<=2-len) i=0;*/
         console.log(i);
