@@ -1,0 +1,1077 @@
+@charset "UTF-8";
+$fontSize:75;
+$red:#f66055;
+$gray:#969696;
+$gray2:#efefef;
+
+article,aside,blockquote,body,button,code,dd,details,div,dl,dt,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,hr,input,legend,li,menu,nav,ol,p,pre,section,td,textarea,th,ul {
+  margin: 0;
+  padding: 0
+}
+
+img {
+  border: 0
+}
+
+del {
+  text-decoration: line-through
+}
+
+ol,ul,li {
+  list-style: none
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-size: 100%;
+  font-weight: 500
+}
+
+a {
+  text-decoration: none
+}
+
+a:hover {
+  text-decoration: none
+}
+a:active {
+  color:$red;
+}
+em,strong{
+  font-style: normal;
+}
+html {
+  -webkit-tap-highlight-color: transparent
+}
+
+body,html {
+  font-family: sans-serif;
+  overflow-x: hidden
+}
+
+body{
+  min-width: 320px;
+  font-size:24rem/$fontSize;
+
+}
+/*重置组建样式*/
+.page{
+  background: #fff;
+}
+.bar-nav ~ .content{
+  top:90rem/$fontSize;
+}
+
+.bar-nav,.title{
+  height: 80rem/$fontSize;
+  line-height: 80rem/$fontSize;
+  font-size: 30rem/$fontSize;
+}
+.button{
+  height: 60rem/$fontSize;
+  line-height:60rem/$fontSize;
+  border-radius: 3px;
+  font-size: 28rem/$fontSize;
+  color:$red;
+  border-color: $red;
+}
+.content-block{
+  margin:30rem/$fontSize 0;
+  padding:20rem/$fontSize;
+}
+.bar .button-link{
+  color: #333;
+}
+
+.bar-header{
+  height: 80rem/$fontSize;
+  line-height: 80rem/$fontSize;
+  font-size: 30rem/$fontSize;
+  .title{
+    line-height: 80rem/$fontSize;
+    font-size: 30rem/$fontSize;
+  }
+
+}
+.bar .icon{
+  height: 80rem/$fontSize;
+  line-height: 80rem/$fontSize;
+  font-size: 36rem/$fontSize;
+}
+.bar .button-link{
+  height: 80rem/$fontSize;
+  line-height: 80rem/$fontSize;
+  font-size: 36rem/$fontSize;
+}
+/*picker组建*/
+.picker-columns{
+  height: 500rem/$fontSize;
+}
+.picker-modal {
+  .bar{
+    height:88rem/$fontSize;
+  }
+  .title{
+    height:88rem/$fontSize;
+    line-height: 88rem/$fontSize;
+    font-size: 36rem/$fontSize;
+  }
+  .picker-item{
+    height: 24px;
+    line-height: 24px;
+    font-size: 16px;
+  }
+}
+.bar + .picker-items{
+  height: 412rem/$fontSize;
+}
+.picker-center-highlight{
+  height: 24px;
+  margin-top:-12px;
+}
+/*重置按钮样式*/
+.buttons-row .button{
+  height: 56rem/$fontSize;
+  line-height:56rem/$fontSize ;
+  padding:0;
+  border-color:$red;
+  color: $red;
+  font-size: 26rem/$fontSize;
+  &:first-child{
+    border-radius: 3px 0 0 3px;
+  }
+  &:last-child{
+    border-radius: 0 3px 3px 0;
+  }
+  &:active {
+    color: $red;
+    border-color: $red;
+  }
+
+}
+
+.buttons-row .button.active{
+  background-color: $red;
+}
+/*重置弹窗组建样式*/
+.modal{
+  width:540rem/$fontSize;
+  margin-left: -270rem/$fontSize;
+}
+.modal-buttons{
+  height: 108rem/$fontSize;
+}
+.modal-button{
+  height: 108rem/$fontSize;
+  line-height: 108rem/$fontSize;
+  font-size: 30rem/$fontSize;
+  &:after{
+    height: 108rem/$fontSize;
+  }
+}
+/*icomoon 图标字体*/
+@font-face {
+  font-family: 'icomoon';
+  src:url('../fonts/icomoon.eot?men447');
+  src:url('../fonts/icomoon.eot?men447#iefix') format('embedded-opentype'),
+  url('../fonts/icomoon.ttf?men447') format('truetype'),
+  url('../fonts/icomoon.woff?men447') format('woff'),
+  url('../fonts/icomoon.svg?men447#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-index_credit .path1:before {
+  content: "\e907";
+  color: rgb(246, 96, 85);
+}
+.icon-index_credit .path2:before {
+  content: "\e908";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-index_down:before {
+  content: "\e901";
+}
+.icon-index_go:before {
+  content: "\e902";
+}
+.icon-index_return:before {
+  content: "\e903";
+}
+.icon-predict-2:before {
+  content: "\e904";
+}
+.icon-predict:before {
+  content: "\e906";
+}
+.icon-buy:before {
+  content: "\e900";
+}
+.icon-checkbox-unchecked:before {
+  content: "\e905";
+}
+
+.red{
+  color: $red;
+}
+.gray{
+  color: $gray;
+}
+.font30{
+  font-size: 30rem/$fontSize;
+}
+.font36{
+  font-size: 36rem/$fontSize;
+}
+.button-warning.button-fill,.button-disabled.button-fill{
+  height: 70rem/$fontSize;
+  line-height: 70rem/$fontSize;
+  font-size: 36rem/$fontSize;
+  border-radius: 5px;
+}
+.button-warning.button-fill{
+  background: $red;
+}
+.button-disabled.button-fill{
+  background: #ececed;
+  color:$gray;
+}
+/*opacity*/
+@mixin opacity($opacity:50) {
+  opacity: $opacity / 100;
+  filter: alpha(opacity=$opacity);
+}
+/*clearfix*/
+@mixin clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+    overflow: hidden;
+  }
+}
+a{
+  color: #333;
+}
+
+.index-bar-nav{
+  padding:0 20rem/$fontSize;
+  height: 90rem/$fontSize;
+}
+.logo{
+  width:148rem/$fontSize;
+  height: 52rem/$fontSize;
+  margin-top:18rem/$fontSize;
+  background: url("../images/logo.png") 0 0/cover no-repeat scroll;
+}
+.welcome{
+  margin-top:18rem/$fontSize;
+  a{
+    float: left;
+    display: inline-block;
+    width: 110rem/$fontSize;
+    height: 56rem/$fontSize;
+    line-height: 56rem/$fontSize;
+    text-align: center;
+    border:1px solid #2b82d9;
+    border-radius: 3px;
+    font-size: 30rem/$fontSize;
+  }
+  .lg-btn{
+    border-color: #2b82d9;
+  }
+  .rg-btn{
+    border-color: #f66055;
+    margin-left: 30rem/$fontSize;
+  }
+}
+.index-slide{
+  padding-bottom: 0;
+  margin-bottom: 30rem/$fontSize;
+}
+.nfd-footer{
+  height: auto;
+  padding:0;
+  padding:30rem/$fontSize 0 20rem/$fontSize 0;
+  text-align: center;
+  font-size: 30rem/$fontSize;
+  nav{
+    margin-bottom:20rem/$fontSize;
+    a{
+      display: inline-block;
+      margin:0 10rem/$fontSize;
+    }
+  }
+  .copyright{
+    color: #ababab;
+  }
+}
+/*si fang qian*/
+.index-mod-section {
+  @include clearfix;
+  margin-bottom: 30rem/$fontSize;
+  overflow: hidden;
+  .mod-title{
+    height: 82rem/$fontSize;
+    line-height: 82rem/$fontSize;
+    padding:0 24rem/$fontSize;
+    margin-bottom: 24rem/$fontSize;
+    font-size: 24rem/$fontSize;
+    text-align:left;
+    border-bottom: 1px solid #e6e6e6;
+    strong{
+      font-size:30rem/$fontSize;
+    }
+  }
+}
+
+.pm-show-wrap{
+  @include clearfix;
+  -webkit-transition: all 0.5s ease 0s;
+
+  transition: all 0.5s ease 0s;
+}
+.pm-show{
+  padding:30rem/$fontSize 0;
+  .show-item{
+    float: left;
+    width: 380rem/$fontSize;
+
+    .show-item-inner{
+      width: 294rem/$fontSize;
+      height: 294rem/$fontSize;
+      margin:0 auto;
+      background: url("../images/round01.png") center center/contain no-repeat scroll;
+      text-align: center;
+    }
+    span{
+      display: block;
+      font-size:28rem/$fontSize;
+    }
+    .time{
+      padding-top:33rem/$fontSize;
+    }
+    .rate{
+      color: #f66055;
+      em{
+        font-size:42rem/$fontSize;
+
+      }
+    }
+  }
+}
+/*优质散标*/
+.sb-show-list{
+  ul{
+    position: relative;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+  }
+  .sb-item{
+    padding:20rem/$fontSize;
+    border-bottom: 1px solid #e8e8e8;
+  }
+
+}
+.sb-item{
+  position: relative;
+  width: 100%;
+  min-height: 118rem/$fontSize;
+  .item-box{
+    position: relative;
+  }
+  .sb-hd{
+    @include clearfix;
+    margin-bottom: 20rem/$fontSize;
+    .t{
+      float: left;
+      font-size:30rem/$fontSize;
+    }
+  }
+  .sb-bd{
+    display: flex;
+    display:-webkit-flex;
+    justify-content: space-between;
+  }
+  .sb-bd {
+    padding-right: 150rem/$fontSize;
+    .col{
+      display: inline-block;
+      width: 30%;
+      font-size: 22rem/$fontSize;
+      span{
+        display: block;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+    .rate-col{
+      color: $red;
+    }
+  }
+  .buy{
+    position: absolute;
+    right: 0;
+    top:20rem/$fontSize;
+    height: 110rem/$fontSize;
+    padding-left: 20rem/$fontSize;
+    border-left: 1px solid #e8e8e8;
+    text-align: center;
+    .icon-buy{
+      display: inline-block;
+      width: 66rem/$fontSize;
+      height: 66rem/$fontSize;
+      line-height:66rem/$fontSize;
+      border-radius: 50%;
+      border:1px solid $red;
+      &:before{
+        font-size: 46rem/$fontSize;
+        color: $red;
+      }
+    }
+    p{
+      margin:0;
+      font-size: 24rem/$fontSize;
+    }
+  }
+  .buy-over{
+    @extend .buy;
+    .icon-buy{
+      border:1px solid $gray;
+      &:before{
+        color: $gray;
+      }
+    }
+  }
+}
+.xin-icon{
+  float: left;
+  display: inline-block;
+  margin-right: 10rem/$fontSize;
+  padding:0 3px;
+  text-align: center;
+  background: #f66055;
+  border-radius: 3px;
+  color: #fff;
+  font-weight: normal;
+
+}
+
+/*散标列表*/
+.sb-card{
+  padding-bottom:24rem/$fontSize;
+  margin-bottom:30rem/$fontSize;
+  .card-hd{
+    position: relative;
+    padding:24rem/$fontSize;
+    border-bottom: 1px solid #e8e8e8;
+    @include clearfix;
+    .t{
+      float: left;
+      font-size:30rem/$fontSize;
+    }
+
+    .icon-arrow-r{
+      position: absolute;
+      top:20rem/$fontSize;
+      right: 10rem/$fontSize;
+      font-size: 45rem/$fontSize;
+    }
+  }
+  .card-info{
+    display: -webkit-flex;
+    font-size: 20rem/$fontSize;
+    color:#969696;
+    span{
+      display: block;
+    }
+    .rate-col{
+      flex: 1;
+      position: relative;
+      top:-36rem/$fontSize;
+
+      em{
+
+        font-size: 60rem/$fontSize;
+        color:$red;
+      }
+    }
+    .time-col{
+      flex: 1;
+      em{
+        font-size: 30rem/$fontSize;
+      }
+    }
+  }
+  .card-bd{
+    margin-top:64rem/$fontSize;
+    padding:0 24rem/$fontSize;
+  }
+
+}
+/*散标详情*/
+.sb-detail{
+  .sb-name{
+    padding:20rem/$fontSize;
+    font-size: 28rem/$fontSize;
+
+  }
+  .sb-rate{
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: center;
+    font-size:20rem/$fontSize;
+    margin-bottom: 20rem/$fontSize;
+  }
+  .circle-box{
+    width:150rem/$fontSize;
+    height:115rem/$fontSize;
+    padding-top:35rem/$fontSize;
+    text-align: center;
+    background: url("../images/ty.png") center 0/cover no-repeat scroll;
+    span{
+      display: block;
+    }
+  }
+  .remain{
+    margin-bottom: 30rem/$fontSize;
+    text-align: center;
+    font-size:20rem/$fontSize;
+    color:$gray;
+  }
+  .loan-info{
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-around;
+    padding-bottom: 15rem/$fontSize;
+    font-size:24rem/$fontSize;
+    border-bottom:2px solid $gray2;
+    li:first-child{
+      padding-right:122rem/$fontSize;
+      border-right: 1px solid $gray2;
+    }
+    span{
+      display: block;
+    }
+  }
+  .sb-intro{
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-around;
+    padding:25rem/$fontSize 0;
+    font-size:24rem/$fontSize;
+    .t{
+      padding-right: 20rem/$fontSize;
+    }
+    p{
+      color: $gray;
+      margin-bottom: 20rem/$fontSize;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+.buy-opt-cal{
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-around;
+  align-items: center;
+  padding:63rem/$fontSize 0 30rem/$fontSize;
+  background: #f8f8f8;
+  .opt-cal{
+    position: relative;
+    width:320rem/$fontSize;
+    height: 80rem/$fontSize;
+    line-height: 80rem/$fontSize;
+    border:1px solid $red;
+    background: #f8f8f8;
+    border-radius: 5px;
+    overflow: hidden;
+    .txt{
+      width:100%;
+      padding:0;
+      padding-left: 80rem/$fontSize;
+      border:0 none;
+      font-size: 30rem/$fontSize;
+      height: 70rem/$fontSize;
+    }
+    .mp-btn{
+      position: absolute;
+      top:0;
+      width: 78rem/$fontSize;
+      height: 78rem/$fontSize;
+      text-align: center;
+
+      overflow: hidden;
+    }
+    .mp-btn-l{
+      left: 0;
+      border-right: 1px solid $gray2;
+      background:#fff url("../images/minus_btn.png") center center/30% no-repeat scroll;
+      border-radius:5px 0 0 5px;
+    }
+    .mp-btn-r{
+      right: 0;
+      border-left: 1px solid $gray2;
+      background:#fff url("../images/plus_btn.png") center center/30% no-repeat scroll;
+      border-radius:0 5px 5px 0;
+
+    }
+  }
+}
+
+.maybe-income{
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 148rem/$fontSize;
+  border-top:1px solid $gray2;
+  background: #f8f8f8;
+  li{
+
+    span{
+      display: block;
+      margin-bottom: 10rem/$fontSize;
+      &:first-child{
+        color: $gray;
+      }
+    }
+  }
+}
+.sb-ft{
+  padding:54rem/$fontSize 20rem/$fontSize;
+  background: #fff;
+
+}
+
+.readme{
+  margin-top:30rem/$fontSize;
+  a{
+    color: #2b82d9;
+  }
+  .icon-doc{
+    display: inline-block;
+    width:14rem/$fontSize;
+    height: 20rem/$fontSize;
+    margin-right: 10rem/$fontSize;
+    background: url("../images/doc_icon.png") 0 0/contain no-repeat scroll;
+  }
+}
+/*表单*/
+.checkbox{
+  display: inline-block;
+  width:24rem/$fontSize;
+  height: 24rem/$fontSize;
+  margin:0 10rem/$fontSize 0 0;
+  background: url("../images/uncheckbox.png") 0 0/cover no-repeat scroll;
+}
+.checkbox-chked{
+  background: url("../images/checkbox.png") 0 0/cover no-repeat scroll;
+}
+
+.item-input{
+  position: relative;
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 90rem/$fontSize;
+  flex: 1;
+  -webkit-flex: 1;
+  .item-name{
+    display: inline-block;
+    font-size:32rem/$fontSize;
+  }
+  .input-txt{
+    flex: 1;
+    -webkit-flex: 1;
+    height: 25px;
+    line-height: 25px;
+    border:0 none;
+  }
+}
+.info-list-block{
+  background: #fff;
+  border-top: 1px solid $gray2;
+  li{
+    position: relative;
+
+    height: 88rem/$fontSize;
+    border-bottom: 1px solid $gray2;
+    padding:0 20rem/$fontSize;
+
+    a{
+      display: flex;
+      display: -webkit-flex;
+      align-items: center;
+      width: 100%;
+      height: 88rem/$fontSize;
+      font-size: 28rem/$fontSize;
+      color: $gray;
+    }
+  }
+  .icon-arrow-r{
+    position: absolute;
+    right:20rem/$fontSize;
+    top:28rem/$fontSize;
+    font-size: 36rem/$fontSize;
+  }
+}
+.tabs-main{
+  padding:20rem/$fontSize;
+  background: #fff;
+  .tabs{
+    padding:20rem/$fontSize 0;
+  }
+}
+
+
+/*成功图标*/
+.icon-success{
+  display: inline-block;
+  width:84rem/$fontSize;
+  height: 84rem/$fontSize;
+  background: url("../images/icon_success.png") center center/cover no-repeat scroll;
+}
+
+/*个人信息*/
+.person-info-card{
+  dl{
+    display: flex;
+    display:-webkit-flex;
+    justify-content: flex-start;
+    margin-bottom: 20rem/$fontSize;
+    font-size: 22rem/$fontSize;
+    dt{
+      flex: 1;
+    }
+    dd{
+      flex: 2;
+    }
+
+  }
+}
+/*信审评估*/
+.judge-card{
+  @include clearfix;
+  li{
+    float: left;
+    margin-bottom: 20rem/$fontSize;
+    width:33.3333%;
+  }
+
+}
+/*担保说明*/
+.guaranty-card{
+  font-size: 22rem/$fontSize;
+  .gua-title{
+
+    color: $red;
+  }
+  .gua-content{
+    padding: 20rem/$fontSize;
+    text-indent: 30px;
+    line-height: 30rem/$fontSize;
+  }
+}
+/*登录*/
+.user-photo{
+  width:130rem/$fontSize;
+  height:130rem/$fontSize;
+  margin:78rem/$fontSize auto;
+  border-radius: 50%;
+  overflow: hidden;
+  img{
+    max-width: 100%;
+  }
+}
+
+.form-box{
+  padding:20rem/$fontSize;
+}
+.login-form{
+  position: relative;
+  padding:14rem/$fontSize;
+  border:1px solid #dcdcdc;
+  border-radius: 5px;
+  margin-bottom: 30rem/$fontSize;
+  .form-item{
+    position: relative;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    height: 75rem/$fontSize;
+  }
+  &:first-child{
+    &:after{
+      position: absolute;
+      top:92rem/$fontSize;
+      left:92rem/$fontSize;
+      width: 580rem/$fontSize;
+      border-bottom:1px solid #dcdcdc;
+      content: '';
+    }
+  }
+  .item-name{
+    float: left;
+    width:92rem/$fontSize;
+    font-size: 32rem/$fontSize;
+  }
+
+
+}
+.form-ft{
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  margin-top: 30rem/$fontSize;
+}
+/*注册*/
+.reg-form{
+  border:0 none;
+  .item-input{
+    flex: 1;
+    -webkit-flex: 1;
+  }
+  .form-item{
+
+    border-bottom:1px solid #dcdcdc;
+    height: 80rem/$fontSize;
+  }
+  /*.button.getcode-btn{
+    position: absolute;
+    top:20rem/$fontSize;
+    right:20rem/$fontSize;
+  }*/
+}
+.button.getcode-btn{
+  height: 48rem/$fontSize;
+  line-height: 48rem/$fontSize;
+  font-size: 26rem/$fontSize;
+  border-radius: 5px;
+}
+.eye{
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  align-items: center;
+  width:60rem/$fontSize;
+  height:60rem/$fontSize;
+  z-index: 100;
+  &:after{
+    display: block;
+    width:28rem/$fontSize;
+    height:18rem/$fontSize;
+    content:'';
+    background: url("../images/eye.png") 0 0/contain no-repeat scroll;
+  }
+
+}
+.eye-active:after{
+  content:'';
+  background: url("../images/eye-active.png") 0 0/contain no-repeat scroll;
+}
+/*找回密码*/
+.form-box-vertical{
+  .inner-box{
+    padding:20rem/$fontSize;
+  }
+  .form-item{
+    position: relative;
+    margin-bottom: 24rem/$fontSize;
+  }
+  .item-name{
+    display: block;
+    font-size:30rem/$fontSize;
+    margin-bottom: 28rem/$fontSize;
+  }
+  .item-input{
+    position: relative;
+    padding:20rem/$fontSize;
+    border:1px solid #dcdcdc;
+    border-radius: 3px;
+
+  }
+  .code-pic{
+    width:160rem/$fontSize;
+    height: 40rem/$fontSize;
+    border-left:1px solid #dcdcdc;
+    text-align: center;
+    background: #fff;
+    img{
+      width:154rem/$fontSize;
+      height: 40rem/$fontSize;
+    }
+  }
+}
+.send-code{
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  height:225rem/$fontSize;
+  background: url("../images/find_bg.png") 0 0 /cover;
+  .icon-tel{
+    display: inline-block;
+    width:57rem/$fontSize;
+    height: 100rem/$fontSize;
+    background: url("../images/icon-phone.png") 0 0/cover;
+  }
+  p{
+    color:#fff;
+    font-size: 30rem/$fontSize;
+  }
+}
+
+/*提现*/
+.list-form{
+  padding-bottom: 40rem/$fontSize;
+  .form-item{
+    border-bottom: 1px solid #dcdcdc;
+  }
+  .item-input{
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 90rem/$fontSize;
+    .item-name{
+      display: inline-block;
+      width:150rem/$fontSize;
+      font-size:32rem/$fontSize;
+    }
+  }
+
+}
+.tx-complete{
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  img{
+    width:173rem/$fontSize;
+    height:173rem/$fontSize;
+  }
+  p{
+    font-size: 36rem/$fontSize;
+    margin-top:50rem/$fontSize;
+  }
+
+}
+.tx-info{
+  border-top:1px solid #dcdcdc;
+  border-bottom:1px solid #dcdcdc;
+  padding:20rem/$fontSize 0;
+  margin:54rem/$fontSize 0;
+  li{
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70rem/$fontSize;
+    font-size: 36rem/$fontSize;
+  }
+}
+.cz-complete{
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  img{
+    width:84rem/$fontSize;
+    height:84rem/$fontSize;
+  }
+  p{
+    font-size: 36rem/$fontSize;
+    margin-top:30rem/$fontSize;
+  }
+}
+
+
+/*我的理财——私房钱*/
+.user-pm-list{
+  li{
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $gray2;
+    padding:20rem/$fontSize;
+    span{
+      display: block;
+    }
+  }
+}
+
+/*交易记录*/
+.deal-record{
+  li{
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $gray2;
+    padding:20rem/$fontSize;
+    span{
+      display: block;
+    }
+  }
+}
+/*交易筛选*/
+.deal-filter{
+  padding:20rem/$fontSize;
+  h4{
+    font-size: 28rem/$fontSize;
+    color:$gray;
+    margin-bottom: 30rem/$fontSize;
+  }
+  .filter-item{
+    @include clearfix;
+    a{
+      float: left;
+      display: inline-block;
+      padding:10rem/$fontSize;
+      margin:0 20rem/$fontSize 30rem/$fontSize 0;
+      border-radius: 5px;
+      font-size: 26rem/$fontSize;
+      color:$gray;
+      border:1px solid $gray;
+      &:nth-of-type(4n){
+        margin-right: 0;
+      }
+    }
+    .active{
+      color: $red;
+      border-color: $red;
+    }
+
+  }
+}
