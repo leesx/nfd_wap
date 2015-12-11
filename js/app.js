@@ -64,12 +64,22 @@ $(function(){
         ]
     });
     //定位输入框的位置
-    var headerH = $('.bar-header').height();
-    $('.input-txt').on('focus',function(e){
-        e.preventDefault();
-        var top = $(this).offset().top;
-        $('.content').scrollTop(top-headerH);
-    });
+   	;(function(window,$){
+   		var headerH = $('.bar-header').height();
+   	    var t=10;
+	   var timer = null;
+	   var headerH = $('.bar-header').height();
+		$(window).on('resize',function(e){
+			timer && clearTimeout(timer);
+			timer = setTimeout(function(){
+				$('.content').scrollTop(t-headerH-30);// 30像素左右
+				//$('.input-txt').val(t-headerH);
+			}, 0);
+		})
+		$('.input-txt').on('focus',function(e){
+		         t = $(this).offset().top;
+		});
+   	})(window,Zepto);
 
     var $pmShowWrap = $('.pm-show-wrap');
     var len = $pmShowWrap.find('.show-item').length;
