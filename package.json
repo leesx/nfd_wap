@@ -1,18 +1,25 @@
 {
-  "name": "nongfengdai",
-  "version": "0.0.2",
-  "description": "this id nongfengdai webapp",
-  "main": "index.js",
+  "name": "nfdwap",
+  "version": "1.0.0",
+  "description": "this is a nongfengdai webapp",
+  "main": "index",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "webapp",
-    "nongfengdai"
-  ],
-  "author": "leesx",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leesx/nfd_wap.git"
+  },
+  "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leesx/nfd_wap/issues"
+  },
+  "homepage": "https://github.com/leesx/nfd_wap#readme",
   "devDependencies": {
-    "webpack": "^1.12.9"
+    "gulp": "^3.9.0",
+    "gulp-connect": "^2.2.0",
+    "gulp-less": "^3.0.5",
+    "gulp-ruby-sass": "^2.0.6"
   }
 }
