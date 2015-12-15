@@ -22,7 +22,7 @@
         <a class="button button-link button-nav pull-left back" href="index.html">
             <span class="icon icon-index_return"></span>返回
         </a>
-        <h1 class="title">提现详情</h1>
+        <h1 class="title">添加银行卡</h1>
     </header>
     <div class="bar bar-standard bar-footer nfd-footer">
         <nav>
@@ -33,15 +33,27 @@
     <div class="content" id='page-index'>
         <div class="content-inner">
             <div class="form-box">
-                <div class="advance-complete">
-                    <img src="../images/icon_complete.png">
-                    <p>提现申请已提交</p>
+                <div class="nui-flex tx-complete">
+                    <img src="../images/bank-card.png">
+                    <p>您尚未添加银行卡</p>
                 </div>
-                <ul class="advance-info">
-                    <li><span>储蓄卡</span><span>农业银行尾号8875</span></li>
-                    <li><span>提现金额</span><span>¥1.00</span></li>
-                </ul>
-                <a  class="button button-fill button-warning" >完　成</a>
+                <div class="list-form">
+                    <div class="form-item">
+                        <div class="item-input">
+                            <label class="item-name">卡类型</label>
+                            <input type="text" class="input-txt" id='bankCardPicker' value="北京银行  储蓄卡">
+                        </div>
+                    </div>
+                    <div class="form-item">
+                        <div class="item-input">
+                            <label class="item-name">手机号</label>
+                            <input type="text" class="input-txt" placeholder="请输入银行预留手机号">
+                        </div>
+                    </div>
+
+                </div>
+                <a  class="button button-fill button-warning" >下一步</a>
+                <a  class="button button-fill button-disabled">下一步</a>
             </div>
         </div>
     </div>

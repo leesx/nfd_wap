@@ -39,6 +39,9 @@ body {
   min-width: 320px;
   font-size: 0.32rem; }
 
+.mt10 {
+  margin-top: 0.13333rem; }
+
 /*重置组建样式*/
 .page {
   background: #fff; }
@@ -192,6 +195,9 @@ body {
 
 .red {
   color: #f66055; }
+
+.blue {
+  color: #1e63af; }
 
 .gray {
   color: #969696; }
@@ -448,8 +454,7 @@ a {
 
 .pm-show-wrap {
   *zoom: 1;
-  -webkit-transition: all 0.5s ease 0s;
-  transition: all 0.5s ease 0s; }
+  overflow: hidden; }
   .pm-show-wrap:before, .pm-show-wrap:after {
     content: "";
     display: table; }
@@ -607,10 +612,10 @@ a {
   padding: 0.26667rem;
   font-size: 0.37333rem; }
 .sb-detail .sb-rate {
-  display: flex;
+  /*display: flex;
   display: -webkit-flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center;*/
   font-size: 0.26667rem;
   margin-bottom: 0.26667rem; }
 .sb-detail .circle-box {
@@ -639,9 +644,9 @@ a {
   .sb-detail .loan-info span {
     display: block; }
 .sb-detail .sb-intro {
-  display: flex;
+  /*display: flex;
   display: -webkit-flex;
-  justify-content: space-around;
+  justify-content: space-around;*/
   padding: 0.33333rem 0;
   font-size: 0.32rem; }
   .sb-detail .sb-intro .t {
@@ -759,12 +764,10 @@ a {
   .info-list-block li {
     position: relative;
     height: 1.17333rem;
+    line-height: 1.17333rem;
     border-bottom: 1px solid #efefef;
     padding: 0 0.26667rem; }
     .info-list-block li a {
-      display: flex;
-      display: -webkit-flex;
-      align-items: center;
       width: 100%;
       height: 1.17333rem;
       font-size: 0.37333rem;
@@ -971,31 +974,34 @@ a {
       width: 2rem;
       font-size: 0.42667rem; }
 
-.tx-complete {
+.advance-complete, .add-bankcard {
   display: flex;
   display: -webkit-flex;
   justify-content: center;
   align-items: center;
   flex-direction: column; }
-  .tx-complete img {
+  .advance-complete img, .add-bankcard img {
     width: 2.30667rem;
     height: 2.30667rem; }
-  .tx-complete p {
+  .advance-complete p, .add-bankcard p {
     font-size: 0.48rem;
     margin-top: 0.66667rem; }
 
-.tx-info {
+.advance-info {
   border-top: 1px solid #dcdcdc;
   border-bottom: 1px solid #dcdcdc;
   padding: 0.26667rem 0;
   margin: 0.72rem 0; }
-  .tx-info li {
+  .advance-info li {
     display: flex;
     display: -webkit-flex;
     justify-content: space-between;
     align-items: center;
     height: 0.93333rem;
     font-size: 0.48rem; }
+
+.advance-box .list-form .item-input .item-name {
+  width: 3rem; }
 
 .cz-complete {
   display: flex;
@@ -1061,5 +1067,18 @@ a {
     .deal-filter .filter-item .active {
       color: #f66055;
       border-color: #f66055; }
+
+/*添加银行卡*/
+.add-bankcard {
+  padding-bottom: 0.93333rem; }
+
+.icon-addcard {
+  position: relative;
+  top: 0.10667rem;
+  display: inline-block;
+  margin-right: 0.26667rem;
+  width: 0.58667rem;
+  height: 0.58667rem;
+  background: url("../images/icon_addcard.png") 0 0/contain no-repeat; }
 
 /*# sourceMappingURL=app.css.map */

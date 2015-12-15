@@ -1,6 +1,7 @@
 @charset "UTF-8";
 $fontSize:75;
 $red:#f66055;
+$blue:#1e63af;
 $gray:#969696;
 $gray2:#efefef;
 
@@ -52,6 +53,10 @@ body{
   min-width: 320px;
   font-size:24rem/$fontSize;
 
+}
+
+.mt10{
+  margin-top:10rem/$fontSize;
 }
 /*重置组建样式*/
 .page{
@@ -228,6 +233,9 @@ body{
 
 .red{
   color: $red;
+}
+.blue{
+  color: $blue;
 }
 .gray{
   color: $gray;
@@ -531,9 +539,7 @@ a{
 
 .pm-show-wrap{
   @include clearfix;
-  -webkit-transition: all 0.5s ease 0s;
-
-  transition: all 0.5s ease 0s;
+  overflow: hidden;
 }
 .pm-show{
   padding:30rem/$fontSize 0;
@@ -722,10 +728,10 @@ a{
 
   }
   .sb-rate{
-    display: flex;
+    /*display: flex;
     display: -webkit-flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center;*/
     font-size:20rem/$fontSize;
     margin-bottom: 20rem/$fontSize;
   }
@@ -761,9 +767,9 @@ a{
     }
   }
   .sb-intro{
-    display: flex;
+    /*display: flex;
     display: -webkit-flex;
-    justify-content: space-around;
+    justify-content: space-around;*/
     padding:25rem/$fontSize 0;
     font-size:24rem/$fontSize;
     .t{
@@ -904,15 +910,12 @@ a{
   border-top: 1px solid $gray2;
   li{
     position: relative;
-
     height: 88rem/$fontSize;
+    line-height: 88rem/$fontSize;
     border-bottom: 1px solid $gray2;
     padding:0 20rem/$fontSize;
 
     a{
-      display: flex;
-      display: -webkit-flex;
-      align-items: center;
       width: 100%;
       height: 88rem/$fontSize;
       font-size: 28rem/$fontSize;
@@ -1153,7 +1156,7 @@ a{
   }
 
 }
-.tx-complete{
+.advance-complete{
   display: flex;
   display: -webkit-flex;
   justify-content: center;
@@ -1169,7 +1172,7 @@ a{
   }
 
 }
-.tx-info{
+.advance-info{
   border-top:1px solid #dcdcdc;
   border-bottom:1px solid #dcdcdc;
   padding:20rem/$fontSize 0;
@@ -1182,6 +1185,9 @@ a{
     height: 70rem/$fontSize;
     font-size: 36rem/$fontSize;
   }
+}
+.advance-box .list-form .item-input .item-name{
+  width: 3rem;
 }
 .cz-complete{
   display: flex;
@@ -1258,4 +1264,19 @@ a{
     }
 
   }
+}
+
+/*添加银行卡*/
+.add-bankcard{
+  @extend .advance-complete;
+  padding-bottom: 70rem/$fontSize;
+}
+.icon-addcard{
+  position: relative;
+  top:8rem/$fontSize;
+  display: inline-block;
+  margin-right: 20rem/$fontSize;
+  width: 44rem/$fontSize;
+  height:44rem/$fontSize;
+  background: url("../images/icon_addcard.png") 0 0/contain no-repeat;
 }
