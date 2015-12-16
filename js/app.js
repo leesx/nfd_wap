@@ -79,6 +79,10 @@ $(function(){
 		         t = $(this).offset().top;
 		});
    	})(window,Zepto);
+    //显示下拉菜单
+    $('#dropMenuBtn').on('click',function(){
+        $('.J_dropMenu').toggleClass('show-menu');
+    });
     //获取当前 Transform的translate的x,y
     function getTransform(ele) {
         /*return window.getComputedStyle(ele)['webkitTransform'].match(/\-?[0-9]+\.?[0-9]*!/g)[4]-0;*/
@@ -88,73 +92,51 @@ $(function(){
             y:matrix.f
         }
     }
+    //首页私房钱左右滑动
+    function SlidePm(ele){
+        this.ele = ele;
+        this.chilenLen = ele.find('.show-item').length;
+        this.w = ele.find('.show-item').width()+1;//加1px的误差
+    }
+    SlidePm.prototype.init = function(){
 
-    function SlidePm(){
-        var $PmSlide = $('#pmSlideShow');
-        var len = $PmSlide.find('.show-item').length;
-        var w = $PmSlide.find('.show-item').width()+1;//加1px的误差
+        var wrapWidth = this.chilenLen*this.w;
         var winW = $(window).width();
-        var i=0;
-        console.log(len*w);
-        $PmSlide.width(len*w).css({'transform':'translate3d('+(-(len*w-winW)/2)+'px,0,0)'});
-        var pre = 0;
-        $PmSlide.on('touchstart',function(e){
+        this.ele.width(wrapWidth).css({'transform':'translate3d('+(-(wrapWidth-winW)/2)+'px,0,0)'});
+        this.bindDom(this.ele);
+    };
+    SlidePm.prototype.bindDom  =function(){
+        var _this = this;
+        _this.ele.on('touchstart',function(e){
             e.preventDefault();
             this.startTime = new Date().getTime();
-            console.log(getTransform(this).x);
             this.startX = e.touches[0].pageX;
-            this.cue3dX = getTransform(this).x;
+            this.cur3dX = getTransform(this).x;
             this.style.webkitTransition = 'none'
         });
-        $PmSlide.on('touchmove',function(e){
+        _this.ele.on('touchmove',function(e){
             e.preventDefault();
-            pre = e.touches[0].pageX - this.startX + this.cue3dX;
-            this.style.webkitTransform = 'translate3d('+ pre +'px, 0px, 0px)';
+            this.pre = e.touches[0].pageX - this.startX + this.cur3dX;
+            this.style.webkitTransform = 'translate3d('+ this.pre +'px, 0px, 0px)';
         });
-        $PmSlide.on('touchend',function(e){
+        _this.ele.on('touchend',function(e){
             e.preventDefault();
             this.endTime = new Date().getTime();
             var disTime = (this.endTime - this.startTime)/1000;
-            console.log('时间差：'+disTime);
-            if(disTime < 0.5){
+            if(disTime < 0.5 || disTime > 2){
                 this.style.webkitTransition = 'transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) 0s';
             }
-            //this.startX = 0;
             if(getTransform(this).x>0){
                 this.style.webkitTransform = 'translate3d(0px, 0px, 0px)';
-            }else if(getTransform(this).x<-w*(len-2)){
-                this.style.webkitTransform = 'translate3d(-'+(w*(len-2))+'px, 0px, 0px)';
+            }else if(getTransform(this).x<-_this.w*(_this.chilenLen-2)){
+                this.style.webkitTransform = 'translate3d(-'+(_this.w*(_this.chilenLen-2))+'px, 0px, 0px)';
             }else{
-                this.style.webkitTransform = 'translate3d('+ (e.changedTouches[0].pageX - this.startX + this.cue3dX) +'px, 0, 0)';
+                this.style.webkitTransform = 'translate3d('+ (e.changedTouches[0].pageX - this.startX + this.cur3dX) +'px, 0, 0)';
             }
         });
-    }
-    var pmSlide = new SlidePm();
-    /*function SlidePm(){
-        var $pmShowWrap = $('.pm-show-wrap');
-        var len = $pmShowWrap.find('.show-item').length;
-        var w = $pmShowWrap.find('.show-item').width()+1;//加1px的误差
-        var winW = $(window).width();
-        var i=0;
-        $pmShowWrap.width(len*w).css({'transform':'translate3d('+(-(len*w-winW)/2)+'px,0,0)'});
-        $pmShowWrap.on('swipeLeft',function(e){
-            e.preventDefault();
-            i++;
-            if(i>=len-2){
-                i=0;
-                $(this).css({'transform':'translate3d(0,0,0)'})
-            }else{
-                $(this).css({'transform':'translate3d('+((-w)*i-(len*w-winW)/2)+'px,0,0)'})
-            }
-            console.log(i);
-
-        });
-        $pmShowWrap.on('swipeRight',function(e){
-            e.preventDefault();
-            i--;
-            /!*if(i<=2-len) i=0;*!/
-            console.log(i);
-            $(this).css({'transform':'translate3d('+((w)*i+(len*w-winW)/2)+'px,0,0)'})
-        });
-    }*/
+    };
+    var pmSlide = new SlidePm($('#pmSlideShow'));
+    pmSlide.init();
+    //初始化lightUI框架
+    $.init();
 });

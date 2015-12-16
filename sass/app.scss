@@ -58,6 +58,12 @@ body{
 .mt10{
   margin-top:10rem/$fontSize;
 }
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
 /*重置组建样式*/
 .page{
   background: #fff;
@@ -268,9 +274,13 @@ body{
   display: flex!important;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap
-}
+  flex-wrap: wrap;
 
+}
+.nui-box{
+  -webkit-box-pack:justify;//兼容UC
+  box-pack:justify;
+}
 .nui-flex,.nui-flex *,.nui-flex :after,.nui-flex :before {
   box-sizing: border-box
 }
@@ -348,7 +358,11 @@ body{
 .nui-flex.justify-around {
   -webkit-justify-content: space-around;
   -ms-flex-pack: distribute;
-  justify-content: space-around
+  justify-content: space-around;
+  display:-webkit-box;
+  -webkit-box-pack:center;//兼容UC
+  -webkit-box-align:center;
+
 }
 
 .nui-flex.align-start {
@@ -395,7 +409,7 @@ body{
 }
 
 .nui-flex>.cell {
-  -webkit-box-flex: 1;
+  /*-webkit-box-flex: 1;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -407,16 +421,10 @@ body{
   display: block;
   padding: 0!important;
   position: relative;
-  text-align:center;
+  text-align:center;*/
 }
 
-.nui-flex>.cell.fixed {
-  -webkit-box-flex: 0!important;
-  -webkit-flex: none!important;
-  -ms-flex: none!important;
-  flex: none!important;
-  width: auto
-}
+
 
 .nui-flex>.cell.align-start {
   -webkit-align-self: flex-start;
@@ -518,7 +526,7 @@ a{
     color: #ababab;
   }
 }
-/*si fang qian*/
+/*私房钱*/
 .index-mod-section {
   @include clearfix;
   margin-bottom: 30rem/$fontSize;
@@ -556,6 +564,7 @@ a{
     }
     span{
       display: block;
+      margin-bottom: 10rem/$fontSize;
       font-size:28rem/$fontSize;
     }
     .time{
@@ -571,6 +580,30 @@ a{
   }
 }
 /*优质散标*/
+.dropmenu{
+  position: absolute;
+  left:0;
+  top:80rem/$fontSize;
+  width: 100%;
+  background: #e8e8e8;
+  transition: transform .3s ease-in 0s;
+  -webkit-transition: transform .3s ease-in 0s;
+  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  a{
+    display: block;
+    border-bottom: 1px solid #ccc;
+    padding-left:  40rem/$fontSize;
+    &:last-child{
+      border-bottom: 0 none;
+    }
+
+  }
+}
+.show-menu{
+  transform: translateX(0px);
+  -webkit-transform: translateX(0px);
+}
 .sb-show-list{
   ul{
     position: relative;
@@ -624,9 +657,10 @@ a{
   .buy{
     position: absolute;
     right: 0;
-    top:20rem/$fontSize;
+    top:50%;
     height: 110rem/$fontSize;
     padding-left: 20rem/$fontSize;
+    margin-top:-55rem/$fontSize;
     border-left: 1px solid #e8e8e8;
     text-align: center;
     .icon-buy{
@@ -691,16 +725,21 @@ a{
     }
   }
   .card-info{
+    @include clearfix;
     font-size: 20rem/$fontSize;
     color:#969696;
+    li{
+      float: left;
+      width: 33.33333%;
+      padding-right: 20rem/$fontSize;
+      white-space: nowrap;
+    }
     span{
       display: block;
     }
     .rate-cell{
-      flex: 1;
       position: relative;
       top:-36rem/$fontSize;
-
       em{
 
         font-size: 60rem/$fontSize;
@@ -708,7 +747,6 @@ a{
       }
     }
     .time-cell{
-      flex: 1;
       em{
         font-size: 30rem/$fontSize;
       }
@@ -728,10 +766,6 @@ a{
 
   }
   .sb-rate{
-    /*display: flex;
-    display: -webkit-flex;
-    align-items: center;
-    justify-content: center;*/
     font-size:20rem/$fontSize;
     margin-bottom: 20rem/$fontSize;
   }
@@ -752,25 +786,26 @@ a{
     color:$gray;
   }
   .loan-info{
-    display: flex;
-    display: -webkit-flex;
-    justify-content: space-around;
+    @include clearfix;
     padding-bottom: 15rem/$fontSize;
     font-size:24rem/$fontSize;
     border-bottom:2px solid $gray2;
-    li:first-child{
-      padding-right:122rem/$fontSize;
-      border-right: 1px solid $gray2;
+    li{
+      float: left;
+      &:first-child{
+        width:280rem/$fontSize;
+        padding-right:122rem/$fontSize;
+        margin:0 125rem/$fontSize 0 82rem/$fontSize;
+        border-right: 1px solid $gray2;
+      }
     }
     span{
       display: block;
     }
   }
   .sb-intro{
-    /*display: flex;
-    display: -webkit-flex;
-    justify-content: space-around;*/
-    padding:25rem/$fontSize 0;
+    @include  clearfix;
+    padding:25rem/$fontSize 20rem/$fontSize;
     font-size:24rem/$fontSize;
     .t{
       padding-right: 20rem/$fontSize;
@@ -786,13 +821,15 @@ a{
 }
 
 .buy-opt-cal{
-  display: flex;
-  display: -webkit-flex;
-  justify-content: space-around;
-  align-items: center;
+  @include  clearfix;
   padding:63rem/$fontSize 0 30rem/$fontSize;
   background: #f8f8f8;
+  .t{
+    float: left;
+    margin:24rem/$fontSize 100rem/$fontSize 0 85rem/$fontSize;
+  }
   .opt-cal{
+    float: left;
     position: relative;
     width:320rem/$fontSize;
     height: 80rem/$fontSize;
@@ -821,13 +858,13 @@ a{
     .mp-btn-l{
       left: 0;
       border-right: 1px solid $gray2;
-      background:#fff url("../images/minus_btn.png") center center/30% no-repeat scroll;
+      background:#fff url("../images/minus_btn.png") center/30% no-repeat scroll;
       border-radius:5px 0 0 5px;
     }
     .mp-btn-r{
       right: 0;
       border-left: 1px solid $gray2;
-      background:#fff url("../images/plus_btn.png") center center/30% no-repeat scroll;
+      background:#fff url("../images/plus_btn.png") center/30% no-repeat scroll;
       border-radius:0 5px 5px 0;
 
     }
@@ -835,15 +872,14 @@ a{
 }
 
 .maybe-income{
-  display: flex;
-  display: -webkit-flex;
-  justify-content: space-around;
-  align-items: center;
+  @include clearfix;
   height: 148rem/$fontSize;
+  padding:0 75rem/$fontSize;
   border-top:1px solid $gray2;
   background: #f8f8f8;
   li{
-
+    display: inline-block;
+    padding-top:20rem/$fontSize;
     span{
       display: block;
       margin-bottom: 10rem/$fontSize;
@@ -883,23 +919,20 @@ a{
 .checkbox-chked{
   background: url("../images/checkbox.png") 0 0/cover no-repeat scroll;
 }
-
+.form-item{
+  margin-bottom: 20rem/$fontSize;
+  &:last-child{
+    margin-bottom: 0;
+  }
+}
 .item-input{
   position: relative;
-  display: flex;
-  display: -webkit-flex;
-  align-items: center;
-  justify-content: flex-start;
-  height: 90rem/$fontSize;
-  flex: 1;
-  -webkit-flex: 1;
   .item-name{
     display: inline-block;
     font-size:32rem/$fontSize;
   }
   .input-txt{
-    flex: 1;
-    -webkit-flex: 1;
+    width: 100%;
     height: 25px;
     line-height: 25px;
     border:0 none;
@@ -916,6 +949,7 @@ a{
     padding:0 20rem/$fontSize;
 
     a{
+      display: block;
       width: 100%;
       height: 88rem/$fontSize;
       font-size: 28rem/$fontSize;
@@ -945,7 +979,97 @@ a{
   height: 84rem/$fontSize;
   background: url("../images/icon_success.png") center center/cover no-repeat scroll;
 }
+/*我的账户*/
+.total-asset {
+  width:257rem/$fontSize;
+  height: 257rem/$fontSize;
+  margin:50rem/$fontSize auto 0;
+  padding-top:100rem/$fontSize;
+  background: url("../images/round02.png") center/cover no-repeat scroll;
+  text-align: center;
+  span{
+    display: block;
+  }
+}
+.asset-info{
+  @include clearfix;
+  padding:0 20rem/$fontSize;
+  margin-bottom: 20rem/$fontSize;
+  span{
+    display: block;
+  }
+}
+.asset-opt{
+  @include clearfix;
+  padding:0 20rem/$fontSize;
 
+  border-top:1px solid #e6e6e6;
+  border-bottom:1px solid #e6e6e6;
+  li{
+    float: left;
+    width:175rem/$fontSize;
+    height: 86rem/$fontSize;
+    line-height: 86rem/$fontSize;
+    text-align: center;
+    font-size: 36rem/$fontSize;
+    border-right:1px solid #e6e6e6;
+    &:first-child{
+      width:360rem/$fontSize;
+      padding-top:20rem/$fontSize;
+      text-align: left;
+      line-height: 1;
+      span{
+        display: block;
+        font-size: 24rem/$fontSize;
+      }
+    }
+    &:last-child{
+      border-right:  0 none;
+    }
+    a{
+      display: block;
+    }
+  }
+}
+.asset-mange-wrap{
+  padding-top:30rem/$fontSize;
+  background: #efefef;
+
+}
+.asset-mange{
+  @include clearfix;
+
+  a{
+    display: block;
+    float: left;
+    width: 50%;
+    padding:20rem/$fontSize 0;
+    border:1px solid #e6e6e6;
+    border-left:0 none;
+    text-align: center;
+    font-size: 28rem/$fontSize;
+    background: #fff;
+  }
+  .icon-am{
+    display:block;
+    width:104rem/$fontSize;
+    height: 104rem/$fontSize;
+    margin:0 auto 15rem/$fontSize;
+
+  }
+  .icon-am1{
+    background: url("../images/icon_am1.png") center/cover no-repeat scroll;
+  }
+  .icon-am2{
+    background: url("../images/icon_am2.png") center/cover no-repeat scroll;
+  }
+  .icon-am3{
+    background: url("../images/icon_am3.png") center/cover no-repeat scroll;
+  }
+  .icon-am4{
+    background: url("../images/icon_am4.png") center/cover no-repeat scroll;
+  }
+}
 /*个人信息*/
 .person-info-card{
   dl{
@@ -1001,23 +1125,32 @@ a{
 .form-box{
   padding:20rem/$fontSize;
 }
+.form-box-horizontal{
+  .form-item{
+    @include clearfix;
+  }
+  .item-name {
+    float: left;
+    width: 20%;
+  }
+  .item-input{
+    float: left;
+    width: 80%;
+  }
+}
 .login-form{
   position: relative;
-  padding:14rem/$fontSize;
+  padding:25rem/$fontSize 14rem/$fontSize;
   border:1px solid #dcdcdc;
   border-radius: 5px;
   margin-bottom: 30rem/$fontSize;
   .form-item{
     position: relative;
-    display: flex;
-    display: -webkit-flex;
-    align-items: center;
-    height: 75rem/$fontSize;
   }
   &:first-child{
     &:after{
       position: absolute;
-      top:92rem/$fontSize;
+      top:80rem/$fontSize;
       left:92rem/$fontSize;
       width: 580rem/$fontSize;
       border-bottom:1px solid #dcdcdc;
@@ -1025,7 +1158,6 @@ a{
     }
   }
   .item-name{
-    float: left;
     width:92rem/$fontSize;
     font-size: 32rem/$fontSize;
   }
@@ -1041,39 +1173,43 @@ a{
 /*注册*/
 .reg-form{
   border:0 none;
-  .item-input{
-    flex: 1;
-    -webkit-flex: 1;
-  }
+  margin-bottom: 30rem/$fontSize;
   .form-item{
-
+    margin-bottom: 0;
     border-bottom:1px solid #dcdcdc;
-    height: 80rem/$fontSize;
   }
-  /*.button.getcode-btn{
-    position: absolute;
-    top:20rem/$fontSize;
-    right:20rem/$fontSize;
-  }*/
+  .item-input{
+    padding-top:20rem/$fontSize;
+  }
 }
 .button.getcode-btn{
+  position: absolute;
+  top:50%;
+  right:20rem/$fontSize;
   height: 48rem/$fontSize;
   line-height: 48rem/$fontSize;
+  margin-top:-24rem/$fontSize;
   font-size: 26rem/$fontSize;
   border-radius: 5px;
 }
 .eye{
-  display: flex;
-  display: -webkit-flex;
-  justify-content: center;
-  align-items: center;
+  position: absolute;
+  right:0;
+  top:50%;
   width:60rem/$fontSize;
   height:60rem/$fontSize;
+  margin-top:-30rem/$fontSize;
   z-index: 100;
+  text-align: center;
   &:after{
-    display: block;
+    position: absolute;
+    top:50%;
+    left:50%;
+    display: inline-block;
     width:28rem/$fontSize;
     height:18rem/$fontSize;
+    margin-top:-9rem/$fontSize;
+    margin-left: -14rem/$fontSize;
     content:'';
     background: url("../images/eye.png") 0 0/contain no-repeat scroll;
   }
@@ -1105,8 +1241,12 @@ a{
 
   }
   .code-pic{
+    position: absolute;
+    right:0;
+    top:50%;
     width:160rem/$fontSize;
     height: 40rem/$fontSize;
+    margin-top:-20rem/$fontSize;
     border-left:1px solid #dcdcdc;
     text-align: center;
     background: #fff;
@@ -1115,19 +1255,17 @@ a{
       height: 40rem/$fontSize;
     }
   }
+
 }
 .send-code{
-  display: flex;
-  display: -webkit-flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-direction: column;
   height:225rem/$fontSize;
   background: url("../images/find_bg.png") 0 0 /cover;
+  text-align: center;
   .icon-tel{
     display: inline-block;
     width:57rem/$fontSize;
     height: 100rem/$fontSize;
+    margin:20rem/$fontSize auto;
     background: url("../images/icon-phone.png") 0 0/cover;
   }
   p{
@@ -1143,11 +1281,6 @@ a{
     border-bottom: 1px solid #dcdcdc;
   }
   .item-input{
-    display: flex;
-    display: -webkit-flex;
-    align-items: center;
-    justify-content: flex-start;
-    height: 90rem/$fontSize;
     .item-name{
       display: inline-block;
       width:150rem/$fontSize;
@@ -1157,14 +1290,17 @@ a{
 
 }
 .advance-complete{
-  display: flex;
+  /*display: flex;
   display: -webkit-flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: column;*/
+  text-align: center;
   img{
+    display: block;
     width:173rem/$fontSize;
     height:173rem/$fontSize;
+    margin:0 auto;
   }
   p{
     font-size: 36rem/$fontSize;
@@ -1178,9 +1314,10 @@ a{
   padding:20rem/$fontSize 0;
   margin:54rem/$fontSize 0;
   li{
-    display: flex;
+    display: -webkit-box;
     display: -webkit-flex;
     justify-content: space-between;
+    -webkit-box-pack: justify;
     align-items: center;
     height: 70rem/$fontSize;
     font-size: 36rem/$fontSize;
@@ -1189,15 +1326,16 @@ a{
 .advance-box .list-form .item-input .item-name{
   width: 3rem;
 }
+.advance-box .item-input{
+  padding-bottom: 10rem/$fontSize;
+}
 .cz-complete{
-  display: flex;
-  display: -webkit-flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  text-align: center;
   img{
+    display: block;
     width:84rem/$fontSize;
     height:84rem/$fontSize;
+    margin: 0 auto;
   }
   p{
     font-size: 36rem/$fontSize;
@@ -1224,12 +1362,16 @@ a{
 /*交易记录*/
 .deal-record{
   li{
-    display: flex;
-    display: -webkit-flex;
-    justify-content: space-between;
-    align-items: center;
+    @include clearfix;
     border-bottom: 1px solid $gray2;
     padding:20rem/$fontSize;
+    .time{
+      float: left;
+    }
+    .amount{
+      float: right;
+      padding-top:20rem/$fontSize;
+    }
     span{
       display: block;
     }
