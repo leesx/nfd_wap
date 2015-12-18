@@ -50,39 +50,9 @@ $(function(){
         var successHTML = '<i class="icon-success"></i><p>恭喜您!手机号修改成功 </p><p>请牢记您的密码138****5555</p>';
         $.alert(successHTML);
     });
-    //提现_选择银行卡
-    $("#bankCardPicker").picker({
-        toolbarTemplate: '<header class="bar bar-nav">\
-  <button class="button button-link pull-right close-picker">确定</button>\
-  <h1 class="title">选择银行卡</h1>\
-  </header>',
-        cols: [
-            {
-                textAlign: 'center',
-                values: ['iPhone 4', 'iPhone 4S', 'iPhone 5', 'iPhone 5S', 'iPhone 6', 'iPhone 6 Plus', 'iPad 2', 'iPad Retina', 'iPad Air', 'iPad mini', 'iPad mini 2', 'iPad mini 3']
-            }
-        ]
-    });
-    //定位输入框的位置
-   	;(function(window,$){
-       var t=10;
-	   var timer = null;
-	   var headerH = $('.bar-header').height();
-		$(window).on('resize',function(e){
-			timer && clearTimeout(timer);
-			timer = setTimeout(function(){
-				$('.content').scrollTop(t-headerH-30);// 30像素左右
-				//$('.input-txt').val(t-headerH);
-			}, 0);
-		})
-		$('.input-txt').on('focus',function(e){
-		         t = $(this).offset().top;
-		});
-   	})(window,Zepto);
-    //显示下拉菜单
-    $('#dropMenuBtn').on('click',function(){
-        $('.J_dropMenu').toggleClass('show-menu');
-    });
+
+
+
     //获取当前 Transform的translate的x,y
     function getTransform(ele) {
         /*return window.getComputedStyle(ele)['webkitTransform'].match(/\-?[0-9]+\.?[0-9]*!/g)[4]-0;*/
@@ -111,19 +81,22 @@ $(function(){
             e.preventDefault();
             this.startTime = new Date().getTime();
             this.startX = e.touches[0].pageX;
+            this.startY = e.touches[0].pageY;
             this.cur3dX = getTransform(this).x;
             this.style.webkitTransition = 'none'
         });
         _this.ele.on('touchmove',function(e){
             e.preventDefault();
-            this.pre = e.touches[0].pageX - this.startX + this.cur3dX;
-            this.style.webkitTransform = 'translate3d('+ this.pre +'px, 0px, 0px)';
+            this.disX = e.touches[0].pageX - this.startX + this.cur3dX;
+            this.disY = e.touches[0].pageY - this.startY;
+            this.style.webkitTransform = 'translate3d('+ this.disX +'px, 0px, 0px)';
+
         });
         _this.ele.on('touchend',function(e){
             e.preventDefault();
             this.endTime = new Date().getTime();
             var disTime = (this.endTime - this.startTime)/1000;
-            if(disTime < 0.5 || disTime > 2){
+            if(disTime < 0.5 || disTime > 1){
                 this.style.webkitTransition = 'transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) 0s';
             }
             if(getTransform(this).x>0){
@@ -137,6 +110,49 @@ $(function(){
     };
     var pmSlide = new SlidePm($('#pmSlideShow'));
     pmSlide.init();
+
+    $(document).on("pageInit", function(){
+        //显示下拉菜单
+        $(document).on('click','#dropMenuBtn',function(e){
+            console.log(e.target);
+            $('.J_dropMenu').toggleClass('show-menu');
+        });
+        //定位输入框的位置
+        ;(function(window,$){
+            var t=10;
+            var timer = null;
+            var headerH = $('.bar-header').height();
+            $(window).on('resize',function(e){
+                timer && clearTimeout(timer);
+                timer = setTimeout(function(){
+                    $('.content').scrollTop(t-headerH-30);// 30像素左右
+                    //$('.input-txt').val(t-headerH);
+                }, 0);
+            })
+            $('.input-txt').on('focus',function(e){
+                t = $(this).offset().top;
+            });
+        })(window,Zepto);
+    });
+    //提现_选择银行卡
+    $(document).on("pageInit", "#withdrawDepositPage",function(){
+
+        $("#bankCardPicker").picker({
+            toolbarTemplate: '<header class="bar bar-nav">\
+  <button class="button button-link pull-right close-picker">确定</button>\
+  <h1 class="title">选择银行卡</h1>\
+  </header>',
+            cols: [
+                {
+                    textAlign: 'center',
+                    values: ['iPhone 4', 'iPhone 4S', 'iPhone 5', 'iPhone 5S', 'iPhone 6', 'iPhone 6 Plus', 'iPad 2', 'iPad Retina', 'iPad Air', 'iPad mini', 'iPad mini 2', 'iPad mini 3']
+                }
+            ]
+        });
+    });
+
+
+
     //初始化lightUI框架
     $.init();
 });

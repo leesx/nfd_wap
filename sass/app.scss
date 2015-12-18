@@ -99,11 +99,13 @@ body{
   font-size: 30rem/$fontSize;
   .title{
     line-height: 80rem/$fontSize;
-    font-size: 30rem/$fontSize;
+    font-size: 36rem/$fontSize;
   }
 
 }
 .bar .icon{
+  position: relative;
+  top:5rem/$fontSize;
   height: 80rem/$fontSize;
   line-height: 80rem/$fontSize;
   font-size: 36rem/$fontSize;
@@ -111,7 +113,7 @@ body{
 .bar .button-link{
   height: 80rem/$fontSize;
   line-height: 80rem/$fontSize;
-  font-size: 36rem/$fontSize;
+  font-size: 30rem/$fontSize;
 }
 /*picker组建*/
 .picker-columns{
@@ -251,6 +253,9 @@ body{
 }
 .font36{
   font-size: 36rem/$fontSize;
+}
+.font48{
+  font-size: 48rem/$fontSize;
 }
 .button-warning.button-fill,.button-disabled.button-fill{
   height: 70rem/$fontSize;
@@ -554,7 +559,11 @@ a{
   .show-item{
     float: left;
     width: 380rem/$fontSize;
-
+    a{
+      display: block;
+      width: 380rem/$fontSize;
+      border:1px solid red;
+    }
     .show-item-inner{
       width: 294rem/$fontSize;
       height: 294rem/$fontSize;
@@ -770,11 +779,11 @@ a{
     margin-bottom: 20rem/$fontSize;
   }
   .circle-box{
-    width:150rem/$fontSize;
-    height:115rem/$fontSize;
+    width:152rem/$fontSize;
+    height:152rem/$fontSize;
     padding-top:35rem/$fontSize;
     text-align: center;
-    background: url("../images/ty.png") center 0/cover no-repeat scroll;
+    background: url("../images/ty.png") center/cover no-repeat scroll;
     span{
       display: block;
     }
@@ -803,23 +812,23 @@ a{
       display: block;
     }
   }
-  .sb-intro{
-    @include  clearfix;
-    padding:25rem/$fontSize 20rem/$fontSize;
-    font-size:24rem/$fontSize;
-    .t{
-      padding-right: 20rem/$fontSize;
-    }
-    p{
-      color: $gray;
-      margin-bottom: 20rem/$fontSize;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
+
+}
+.sb-intro{
+  @include  clearfix;
+  padding:25rem/$fontSize 20rem/$fontSize;
+  font-size:24rem/$fontSize;
+  .t{
+    padding-right: 20rem/$fontSize;
+  }
+  p{
+    color: $gray;
+    margin-bottom: 20rem/$fontSize;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
-
 .buy-opt-cal{
   @include  clearfix;
   padding:63rem/$fontSize 0 30rem/$fontSize;
@@ -900,12 +909,92 @@ a{
   a{
     color: #2b82d9;
   }
-  .icon-doc{
+
+}
+.icon-doc{
+  display: inline-block;
+  width:14rem/$fontSize;
+  height: 20rem/$fontSize;
+  margin-right: 10rem/$fontSize;
+  background: url("../images/doc_icon.png") 0 0/contain no-repeat scroll;
+}
+/*私房钱列表*/
+.pm-circle-box{
+  width:257rem/$fontSize;
+  height:257rem/$fontSize;
+  padding-top:72rem/$fontSize;
+  margin:0 auto;
+  background: url("../images/round02.png") center/cover no-repeat scroll;
+  text-align: center;
+  span{
+    display: block;
+  }
+}
+.pm-input-invest{
+  text-align: center;
+
+  p{
+    margin-top:20rem/$fontSize;
+  }
+  .input-txt{
+    height: 40px;
+    padding-top:10px;
+    text-align: center;
+    font-size: 40rem/$fontSize;
+    border:0 none;
+    border-bottom: 1px solid $red;
+  }
+}
+.pm-income-compare{
+  @include clearfix;
+  margin-top:60rem/$fontSize;
+  border-top:1px solid $gray2;
+  li{
     display: inline-block;
-    width:14rem/$fontSize;
-    height: 20rem/$fontSize;
-    margin-right: 10rem/$fontSize;
-    background: url("../images/doc_icon.png") 0 0/contain no-repeat scroll;
+    width: 272rem/$fontSize;
+    padding-top:30rem/$fontSize;
+    text-align: center;
+    color: $gray;
+    span{
+      display: block;
+      margin-top: 10rem/$fontSize;
+    }
+    s{
+      display: inline-block;
+    }
+  }
+  .increase-icon{
+    width:58rem/$fontSize;
+    height: 58rem/$fontSize;
+    background: url("../images/increase_icon.png") center/contain no-repeat scroll;
+  }
+  .compare-icon{
+    width:58rem/$fontSize;
+    height: 58rem/$fontSize;
+    background: url("../images/compare_icon.png") center/contain no-repeat scroll;
+  }
+}
+.pm-loan-info{
+
+  padding:20rem/$fontSize;
+  border-bottom: 1px solid $gray2;
+  .pm-name{
+    margin-bottom: 20rem/$fontSize;
+    font-size: 28rem/$fontSize;
+  }
+  li{
+    display: inline-block;
+    width:30%;
+    height: 108rem/$fontSize;
+    span{
+      display: block;
+    }
+  }
+}
+.pm-intro-box{
+  padding:20rem/$fontSize;
+  a{
+    color: $blue;
   }
 }
 /*表单*/
@@ -1058,16 +1147,16 @@ a{
 
   }
   .icon-am1{
-    background: url("../images/icon_am1.png") center/cover no-repeat scroll;
+    background: url("../images/icon_am1.png") center/contain no-repeat scroll;
   }
   .icon-am2{
-    background: url("../images/icon_am2.png") center/cover no-repeat scroll;
+    background: url("../images/icon_am2.png") center/contain no-repeat scroll;
   }
   .icon-am3{
-    background: url("../images/icon_am3.png") center/cover no-repeat scroll;
+    background: url("../images/icon_am3.png") center/contain no-repeat scroll;
   }
   .icon-am4{
-    background: url("../images/icon_am4.png") center/cover no-repeat scroll;
+    background: url("../images/icon_am4.png") center/contain no-repeat scroll;
   }
 }
 /*个人信息*/
@@ -1078,10 +1167,9 @@ a{
     font-size: 22rem/$fontSize;
     dt{
       float: left;
-      width:30%;
+      width:35%;
     }
     dd{
-      float: left;
       overflow: hidden;
     }
 

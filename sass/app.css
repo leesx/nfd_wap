@@ -81,9 +81,11 @@ body {
   font-size: 0.4rem; }
   .bar-header .title {
     line-height: 1.06667rem;
-    font-size: 0.4rem; }
+    font-size: 0.48rem; }
 
 .bar .icon {
+  position: relative;
+  top: 0.06667rem;
   height: 1.06667rem;
   line-height: 1.06667rem;
   font-size: 0.48rem; }
@@ -91,7 +93,7 @@ body {
 .bar .button-link {
   height: 1.06667rem;
   line-height: 1.06667rem;
-  font-size: 0.48rem; }
+  font-size: 0.4rem; }
 
 /*picker组建*/
 .picker-columns {
@@ -213,6 +215,9 @@ body {
 
 .font36 {
   font-size: 0.48rem; }
+
+.font48 {
+  font-size: 0.64rem; }
 
 .button-warning.button-fill, .button-disabled.button-fill {
   height: 0.93333rem;
@@ -473,6 +478,10 @@ a {
   .pm-show .show-item {
     float: left;
     width: 5.06667rem; }
+    .pm-show .show-item a {
+      display: block;
+      width: 5.06667rem;
+      border: 1px solid red; }
     .pm-show .show-item .show-item-inner {
       width: 3.92rem;
       height: 3.92rem;
@@ -653,11 +662,11 @@ a {
   font-size: 0.26667rem;
   margin-bottom: 0.26667rem; }
 .sb-detail .circle-box {
-  width: 2rem;
-  height: 1.53333rem;
+  width: 2.02667rem;
+  height: 2.02667rem;
   padding-top: 0.46667rem;
   text-align: center;
-  background: url("../images/ty.png") center 0/cover no-repeat scroll; }
+  background: url("../images/ty.png") center/cover no-repeat scroll; }
   .sb-detail .circle-box span {
     display: block; }
 .sb-detail .remain {
@@ -685,19 +694,20 @@ a {
       border-right: 1px solid #efefef; }
   .sb-detail .loan-info span {
     display: block; }
-.sb-detail .sb-intro {
+
+.sb-intro {
   *zoom: 1;
   padding: 0.33333rem 0.26667rem;
   font-size: 0.32rem; }
-  .sb-detail .sb-intro:before, .sb-detail .sb-intro:after {
+  .sb-intro:before, .sb-intro:after {
     content: "";
     display: table; }
-  .sb-detail .sb-intro:after {
+  .sb-intro:after {
     clear: both;
     overflow: hidden; }
-  .sb-detail .sb-intro .t {
+  .sb-intro .t {
     padding-right: 0.26667rem; }
-  .sb-detail .sb-intro p {
+  .sb-intro p {
     color: #969696;
     margin-bottom: 0.26667rem;
     white-space: nowrap;
@@ -781,12 +791,84 @@ a {
   margin-top: 0.4rem; }
   .readme a {
     color: #2b82d9; }
-  .readme .icon-doc {
+
+.icon-doc {
+  display: inline-block;
+  width: 0.18667rem;
+  height: 0.26667rem;
+  margin-right: 0.13333rem;
+  background: url("../images/doc_icon.png") 0 0/contain no-repeat scroll; }
+
+/*私房钱列表*/
+.pm-circle-box {
+  width: 3.42667rem;
+  height: 3.42667rem;
+  padding-top: 0.96rem;
+  margin: 0 auto;
+  background: url("../images/round02.png") center/cover no-repeat scroll;
+  text-align: center; }
+  .pm-circle-box span {
+    display: block; }
+
+.pm-input-invest {
+  text-align: center; }
+  .pm-input-invest p {
+    margin-top: 0.26667rem; }
+  .pm-input-invest .input-txt {
+    height: 40px;
+    padding-top: 10px;
+    text-align: center;
+    font-size: 0.53333rem;
+    border: 0 none;
+    border-bottom: 1px solid #f66055; }
+
+.pm-income-compare {
+  *zoom: 1;
+  margin-top: 0.8rem;
+  border-top: 1px solid #efefef; }
+  .pm-income-compare:before, .pm-income-compare:after {
+    content: "";
+    display: table; }
+  .pm-income-compare:after {
+    clear: both;
+    overflow: hidden; }
+  .pm-income-compare li {
     display: inline-block;
-    width: 0.18667rem;
-    height: 0.26667rem;
-    margin-right: 0.13333rem;
-    background: url("../images/doc_icon.png") 0 0/contain no-repeat scroll; }
+    width: 3.62667rem;
+    padding-top: 0.4rem;
+    text-align: center;
+    color: #969696; }
+    .pm-income-compare li span {
+      display: block;
+      margin-top: 0.13333rem; }
+    .pm-income-compare li s {
+      display: inline-block; }
+  .pm-income-compare .increase-icon {
+    width: 0.77333rem;
+    height: 0.77333rem;
+    background: url("../images/increase_icon.png") center/contain no-repeat scroll; }
+  .pm-income-compare .compare-icon {
+    width: 0.77333rem;
+    height: 0.77333rem;
+    background: url("../images/compare_icon.png") center/contain no-repeat scroll; }
+
+.pm-loan-info {
+  padding: 0.26667rem;
+  border-bottom: 1px solid #efefef; }
+  .pm-loan-info .pm-name {
+    margin-bottom: 0.26667rem;
+    font-size: 0.37333rem; }
+  .pm-loan-info li {
+    display: inline-block;
+    width: 30%;
+    height: 1.44rem; }
+    .pm-loan-info li span {
+      display: block; }
+
+.pm-intro-box {
+  padding: 0.26667rem; }
+  .pm-intro-box a {
+    color: #1e63af; }
 
 /*表单*/
 .checkbox {
@@ -933,13 +1015,13 @@ a {
     height: 1.38667rem;
     margin: 0 auto 0.2rem; }
   .asset-mange .icon-am1 {
-    background: url("../images/icon_am1.png") center/cover no-repeat scroll; }
+    background: url("../images/icon_am1.png") center/contain no-repeat scroll; }
   .asset-mange .icon-am2 {
-    background: url("../images/icon_am2.png") center/cover no-repeat scroll; }
+    background: url("../images/icon_am2.png") center/contain no-repeat scroll; }
   .asset-mange .icon-am3 {
-    background: url("../images/icon_am3.png") center/cover no-repeat scroll; }
+    background: url("../images/icon_am3.png") center/contain no-repeat scroll; }
   .asset-mange .icon-am4 {
-    background: url("../images/icon_am4.png") center/cover no-repeat scroll; }
+    background: url("../images/icon_am4.png") center/contain no-repeat scroll; }
 
 /*个人信息*/
 .person-info-card dl {
@@ -954,9 +1036,8 @@ a {
     overflow: hidden; }
   .person-info-card dl dt {
     float: left;
-    width: 30%; }
+    width: 35%; }
   .person-info-card dl dd {
-    float: left;
     overflow: hidden; }
 
 /*信审评估*/
