@@ -1257,7 +1257,7 @@ Device/OS Detection
 					if (metaViewport.content.indexOf('user-scalable=no') !== -1) {
 						return true;
 					}
-					// Chrome 32 and above with width=device-width or sass don't need FastClick
+					// Chrome 32 and above with width=device-width or scss don't need FastClick
 					if (chromeVersion > 31 && document.documentElement.scrollWidth <= window.outerWidth) {
 						return true;
 					}
@@ -1282,7 +1282,7 @@ Device/OS Detection
 					if (metaViewport.content.indexOf('user-scalable=no') !== -1) {
 						return true;
 					}
-					// width=device-width (or sass than device-width) eliminates click delay.
+					// width=device-width (or scss than device-width) eliminates click delay.
 					if (document.documentElement.scrollWidth <= window.outerWidth) {
 						return true;
 					}
