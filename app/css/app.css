@@ -101,10 +101,12 @@ body {
 
 .picker-modal .bar {
   height: 1.17333rem; }
+
 .picker-modal .title {
   height: 1.17333rem;
   line-height: 1.17333rem;
   font-size: 0.48rem; }
+
 .picker-modal .picker-item {
   height: 24px;
   line-height: 24px;
@@ -151,6 +153,17 @@ body {
   .modal-button:after {
     height: 1.44rem; }
 
+/*重置toast组建样式*/
+.modal.toast {
+  width: auto;
+  height: 1.06667rem;
+  padding: 0 0.4rem;
+  font-size: 0.4rem;
+  line-height: 1.06667rem;
+  color: white;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 0.53333rem; }
+
 /*icomoon 图标字体*/
 @font-face {
   font-family: 'icomoon';
@@ -158,6 +171,7 @@ body {
   src: url("../fonts/icomoon.eot?men447#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?men447") format("truetype"), url("../fonts/icomoon.woff?men447") format("woff"), url("../fonts/icomoon.svg?men447#icomoon") format("svg");
   font-weight: normal;
   font-style: normal; }
+
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
@@ -238,8 +252,8 @@ body {
   display: -ms-flexbox !important;
   display: flex !important;
   -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap; }
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
 
 .nui-box {
   -webkit-box-pack: justify;
@@ -252,15 +266,15 @@ body {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column; }
+      -ms-flex-direction: column;
+          flex-direction: column; }
 
 .nui-flex.vertical.reverse {
   -webkit-box-orient: vertical;
   -webkit-box-direction: reverse;
   -webkit-flex-direction: column-reverse;
-  -ms-flex-direction: column-reverse;
-  flex-direction: column-reverse; }
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse; }
 
 .nui-flex.vertical .cell {
   width: auto; }
@@ -281,37 +295,37 @@ body {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
   -webkit-flex-direction: row-reverse;
-  -ms-flex-direction: row-reverse;
-  flex-direction: row-reverse; }
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse; }
 
 .nui-flex.justify-start {
   -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start; }
+      -ms-flex-pack: start;
+          justify-content: flex-start; }
 
 .nui-flex.justify-end {
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end; }
+      -ms-flex-pack: end;
+          justify-content: flex-end; }
 
 .nui-flex.justify-center {
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center; }
+      -ms-flex-pack: center;
+          justify-content: center; }
 
 .nui-flex.justify-between {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between; }
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
 
 .nui-flex.justify-around {
   -webkit-justify-content: space-around;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
   display: -webkit-box;
   -webkit-box-pack: center;
   -webkit-box-align: center; }
@@ -319,26 +333,26 @@ body {
 .nui-flex.align-start {
   -webkit-box-align: start;
   -webkit-align-items: flex-start;
-  -ms-flex-align: start;
-  align-items: flex-start; }
+      -ms-flex-align: start;
+          align-items: flex-start; }
 
 .nui-flex.align-end {
   -webkit-box-align: end;
   -webkit-align-items: flex-end;
-  -ms-flex-align: end;
-  align-items: flex-end; }
+      -ms-flex-align: end;
+          align-items: flex-end; }
 
 .nui-flex.align-center {
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center; }
+      -ms-flex-align: center;
+          align-items: center; }
 
 .nui-flex.align-stretch {
   -webkit-box-align: stretch;
   -webkit-align-items: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch; }
+      -ms-flex-align: stretch;
+          align-items: stretch; }
 
 .nui-flex.align-stretch .cell {
   height: auto !important; }
@@ -346,12 +360,12 @@ body {
 .nui-flex.center {
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center; }
+      -ms-flex-align: center;
+          align-items: center; }
 
 .nui-flex > .cell {
   /*-webkit-box-flex: 1;
@@ -370,24 +384,25 @@ body {
 
 .nui-flex > .cell.align-start {
   -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
-  align-self: flex-start; }
+      -ms-flex-item-align: start;
+          align-self: flex-start; }
 
 .nui-flex > .cell.align-end {
   -webkit-align-self: flex-end;
-  -ms-flex-item-align: end;
-  align-self: flex-end; }
+      -ms-flex-item-align: end;
+          align-self: flex-end; }
 
 .nui-flex > .cell.align-center {
+  item-align: center;
   -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center; }
+      -ms-flex-item-align: center;
+          align-self: center; }
 
 .nui-flex > .cell.align-stretch {
   -webkit-box-align: stretch;
   -webkit-align-items: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
   height: auto !important; }
 
 /*opacity*/
@@ -480,8 +495,7 @@ a {
     width: 5.06667rem; }
     .pm-show .show-item a {
       display: block;
-      width: 5.06667rem;
-      border: 1px solid red; }
+      width: 5.06667rem; }
     .pm-show .show-item .show-item-inner {
       width: 3.92rem;
       height: 3.92rem;
@@ -506,7 +520,10 @@ a {
   top: 1.06667rem;
   width: 100%;
   background: #e8e8e8;
+  -webkit-transition: -webkit-transform .3s ease-in 0s;
+  transition: -webkit-transform .3s ease-in 0s;
   transition: transform .3s ease-in 0s;
+  transition: transform .3s ease-in 0s, -webkit-transform .3s ease-in 0s;
   -webkit-transition: transform .3s ease-in 0s;
   transform: translateX(-100%);
   -webkit-transform: translateX(-100%); }
@@ -526,6 +543,7 @@ a {
   padding: 0;
   margin: 0;
   list-style: none; }
+
 .sb-show-list .sb-item {
   padding: 0.26667rem;
   border-bottom: 1px solid #e8e8e8; }
@@ -549,9 +567,14 @@ a {
       float: left;
       font-size: 0.4rem; }
   .sb-item .sb-bd {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     display: -webkit-flex;
-    justify-content: space-between; }
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
   .sb-item .sb-bd {
     padding-right: 2rem; }
     .sb-item .sb-bd .col {
@@ -658,9 +681,11 @@ a {
 .sb-detail .sb-name {
   padding: 0.26667rem;
   font-size: 0.37333rem; }
+
 .sb-detail .sb-rate {
   font-size: 0.26667rem;
   margin-bottom: 0.26667rem; }
+
 .sb-detail .circle-box {
   width: 2.02667rem;
   height: 2.02667rem;
@@ -669,11 +694,13 @@ a {
   background: url("../images/ty.png") center/cover no-repeat scroll; }
   .sb-detail .circle-box span {
     display: block; }
+
 .sb-detail .remain {
   margin-bottom: 0.4rem;
   text-align: center;
   font-size: 0.26667rem;
   color: #969696; }
+
 .sb-detail .loan-info {
   *zoom: 1;
   padding-bottom: 0.2rem;
@@ -1085,9 +1112,11 @@ a {
   .form-box-horizontal .form-item:after {
     clear: both;
     overflow: hidden; }
+
 .form-box-horizontal .item-name {
   float: left;
   width: 20%; }
+
 .form-box-horizontal .item-input {
   float: left;
   width: 80%; }
@@ -1112,9 +1141,14 @@ a {
     font-size: 0.42667rem; }
 
 .form-ft {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   display: -webkit-flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-top: 0.4rem; }
 
 /*注册*/
@@ -1165,18 +1199,22 @@ a {
 /*找回密码*/
 .form-box-vertical .inner-box {
   padding: 0.26667rem; }
+
 .form-box-vertical .form-item {
   position: relative;
   margin-bottom: 0.32rem; }
+
 .form-box-vertical .item-name {
   display: block;
   font-size: 0.4rem;
   margin-bottom: 0.37333rem; }
+
 .form-box-vertical .item-input {
   position: relative;
   padding: 0.26667rem;
   border: 1px solid #dcdcdc;
   border-radius: 3px; }
+
 .form-box-vertical .code-pic {
   position: absolute;
   right: 0;
@@ -1239,9 +1277,14 @@ a {
   .advance-info li {
     display: -webkit-box;
     display: -webkit-flex;
-    justify-content: space-between;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     -webkit-box-pack: justify;
-    align-items: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 0.93333rem;
     font-size: 0.48rem; }
 
@@ -1264,10 +1307,18 @@ a {
 
 /*我的理财——私房钱*/
 .user-pm-list li {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   display: -webkit-flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-bottom: 1px solid #efefef;
   padding: 0.26667rem; }
   .user-pm-list li span {
@@ -1335,4 +1386,6 @@ a {
   height: 0.58667rem;
   background: url("../images/icon_addcard.png") 0 0/contain no-repeat; }
 
-/*# sourceMappingURL=app.css.map */
+.demo {
+  font-size: 14px;
+  background: #f66055; }

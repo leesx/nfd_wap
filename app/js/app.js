@@ -78,7 +78,6 @@ $(function(){
     SlidePm.prototype.bindDom  =function(){
         var _this = this;
         _this.ele.on('touchstart',function(e){
-            e.preventDefault();
             this.startTime = new Date().getTime();
             this.startX = e.touches[0].pageX;
             this.startY = e.touches[0].pageY;
@@ -90,10 +89,8 @@ $(function(){
             this.disX = e.touches[0].pageX - this.startX + this.cur3dX;
             this.disY = e.touches[0].pageY - this.startY;
             this.style.webkitTransform = 'translate3d('+ this.disX +'px, 0px, 0px)';
-
         });
         _this.ele.on('touchend',function(e){
-            e.preventDefault();
             this.endTime = new Date().getTime();
             var disTime = (this.endTime - this.startTime)/1000;
             if(disTime < 0.5 || disTime > 1){
@@ -113,9 +110,9 @@ $(function(){
 
     $(document).on("pageInit", function(){
         //显示下拉菜单
-        $(document).on('click','#dropMenuBtn',function(e){
-            console.log(e.target);
-            $('.J_dropMenu').toggleClass('show-menu');
+        $(document).on('tap','#dropMenuBtn',function(e){
+            console.log($(e.target).parent().find('.J_dropMenu'));
+            $(e.target).parent().find('.J_dropMenu').toggleClass('show-menu');
         });
         //定位输入框的位置
         ;(function(window,$){
