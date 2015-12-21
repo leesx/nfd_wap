@@ -82,6 +82,7 @@ $(function(){
             this.startX = e.touches[0].pageX;
             this.startY = e.touches[0].pageY;
             this.cur3dX = getTransform(this).x;
+            this.isScrolling = 0;
             this.style.webkitTransition = 'none'
         });
         _this.ele.on('touchmove',function(e){
@@ -89,6 +90,7 @@ $(function(){
             this.disX = e.touches[0].pageX - this.startX + this.cur3dX;
             this.disY = e.touches[0].pageY - this.startY;
             this.style.webkitTransform = 'translate3d('+ this.disX +'px, 0px, 0px)';
+
         });
         _this.ele.on('touchend',function(e){
             this.endTime = new Date().getTime();
@@ -107,13 +109,17 @@ $(function(){
     };
     var pmSlide = new SlidePm($('#pmSlideShow'));
     pmSlide.init();
+    //显示下拉菜单
+    $(document).on("pageInit",'#sanbiaoList', function(e, pageId, $page){
+        console.log($page);
+        $('#dropMenuBtn').on('click','',function(e){
+            console.log($(e.target));
 
-    $(document).on("pageInit", function(){
-        //显示下拉菜单
-        $(document).on('tap','#dropMenuBtn',function(e){
-            console.log($(e.target).parent().find('.J_dropMenu'));
             $(e.target).parent().find('.J_dropMenu').toggleClass('show-menu');
         });
+    });
+    $(document).on("pageInit", function(){
+
         //定位输入框的位置
         ;(function(window,$){
             var t=10;
@@ -125,11 +131,22 @@ $(function(){
                     $('.content').scrollTop(t-headerH-30);// 30像素左右
                     //$('.input-txt').val(t-headerH);
                 }, 0);
-            })
+            });
             $('.input-txt').on('focus',function(e){
                 t = $(this).offset().top;
             });
         })(window,Zepto);
+        //密码是否可见
+        $('.eye').click(function(){
+            if(!this.isEyed){
+                $(this).removeClass('eye-active').prev().attr({'type':'text'});
+                this.isEyed = true;
+            }else{
+                $(this).addClass('eye-active').prev().attr({'type':'password'});
+                this.isEyed = false;
+            }
+
+        })
     });
     //提现_选择银行卡
     $(document).on("pageInit", "#withdrawDepositPage",function(){

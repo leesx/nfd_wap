@@ -231,8 +231,8 @@ body {
   font-size: 0.64rem; }
 
 .button-warning.button-fill, .button-disabled.button-fill {
-  height: 0.93333rem;
-  line-height: 0.93333rem;
+  height: 1.06667rem;
+  line-height: 1.06667rem;
   font-size: 0.48rem;
   border-radius: 5px; }
 
@@ -459,10 +459,9 @@ a {
   top: 1.06667rem;
   width: 100%;
   background: #e8e8e8;
-  transition: transform .3s ease-in 0s;
-  -webkit-transition: transform .3s ease-in 0s;
+  transition: transform 0.3s ease-in 0s, opacity 0.3s ease-in 0s;
   transform: translateX(-100%);
-  -webkit-transform: translateX(-100%); }
+  opacity: 0; }
   .dropmenu a {
     display: block;
     border-bottom: 1px solid #ccc;
@@ -471,6 +470,7 @@ a {
       border-bottom: 0 none; }
 
 .show-menu {
+  opacity: 1;
   transform: translateX(0px);
   -webkit-transform: translateX(0px); }
 

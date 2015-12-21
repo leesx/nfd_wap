@@ -270,8 +270,8 @@ body{
   font-size: 48rem/$fontSize;
 }
 .button-warning.button-fill,.button-disabled.button-fill{
-  height: 70rem/$fontSize;
-  line-height: 70rem/$fontSize;
+  height: 80rem/$fontSize;
+  line-height: 80rem/$fontSize;
   font-size: 36rem/$fontSize;
   border-radius: 5px;
 }
@@ -549,10 +549,9 @@ a{
   top:80rem/$fontSize;
   width: 100%;
   background: #e8e8e8;
-  transition: transform .3s ease-in 0s;
-  -webkit-transition: transform .3s ease-in 0s;
+  transition:  transform .3s ease-in 0s,opacity.3s ease-in 0s;
   transform: translateX(-100%);
-  -webkit-transform: translateX(-100%);
+  opacity: 0;
   a{
     display: block;
     border-bottom: 1px solid #ccc;
@@ -564,6 +563,7 @@ a{
   }
 }
 .show-menu{
+  opacity: 1;
   transform: translateX(0px);
   -webkit-transform: translateX(0px);
 }
