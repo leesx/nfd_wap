@@ -111,11 +111,8 @@ $(function(){
     pmSlide.init();
     //显示下拉菜单
     $(document).on("pageInit",'#sanbiaoList', function(e, pageId, $page){
-        console.log($page);
         $('#dropMenuBtn').on('click','',function(e){
-            console.log($(e.target));
-
-            $(e.target).parent().find('.J_dropMenu').toggleClass('show-menu');
+            $(this).parent().find('.J_dropMenu').toggleClass('show-menu');
         });
     });
     $(document).on("pageInit", function(){
